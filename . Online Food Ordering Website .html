@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crave Corner | Food Ordering</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#fffaf3;color:#252525}
+nav{display:flex;justify-content:space-between;align-items:center;
+padding:20px 7%;background:#211d1b;color:white;flex-wrap:wrap;gap:12px}
+.logo{font-size:25px;color:#ffb52e;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:10px}
+.hero{padding:55px 8%;background:linear-gradient(120deg,#ffb52e,#ff7043);
+display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.hero h1{font-size:clamp(32px,5vw,52px);max-width:500px}
+.hero p{margin:15px 0}
+.hero img{width:280px;max-width:100%;border-radius:50%;
+border:8px solid white}
+.btn{background:#211d1b;color:white;border:0;padding:12px 22px;
+border-radius:25px;cursor:pointer;font-weight:bold}
+.btn:hover{background:#555}
+.offer{text-align:center;padding:15px;background:#211d1b;color:#ffcf70}
+h2{text-align:center;margin:30px 10px 10px}
+.sub{text-align:center;color:#777;margin:10px}
+.categories{display:flex;justify-content:center;gap:12px;
+flex-wrap:wrap;padding:20px}
+.categories a{background:white;padding:12px 18px;border-radius:25px;
+text-decoration:none;color:#333;border:1px solid #ffd39a}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;padding:25px 7%}
+.card{background:white;border-radius:18px;overflow:hidden;
+box-shadow:0 5px 18px #e8dfd5;position:relative;transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.card img{width:100%;height:175px;object-fit:cover}
+.tag{position:absolute;top:12px;left:12px;background:#ff7043;
+color:white;padding:7px 10px;border-radius:15px;font-size:12px}
+.info{padding:16px}
+.info p{color:#777;margin:10px 0}
+.bottom{display:flex;justify-content:space-between;align-items:center}
+.price{color:#e64a19;font-size:21px;font-weight:bold}
+.rating{color:#e6a000}
+.reviews{background:#ffefd5;padding:30px;text-align:center;line-height:2}
+footer{background:#211d1b;color:white;padding:25px;text-align:center}
+@media(max-width:600px){
+nav{justify-content:center;text-align:center}
+.hero{text-align:center;justify-content:center}
+.hero img{width:200px}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">🔥 CRAVE CORNER</div>
+<div>
+<a href="#home">Home</a>
+<a href="#menu">Explore Food</a>
+<a href="#reviews">Reviews</a>
+</div>
+</nav>
+<section class="hero" id="home">
+<div>
+<h1>Good Food.<br>Great Mood.</h1>
+<p>Your cravings deserve something special!</p>
+<p>🍔 Freshly made | 🚀 Fast delivery</p>
+<button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+Explore Menu ↓
+</button>
+</div>
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500"
+alt="Freshly baked pizza">
+</section>
+<div class="offer">🎉 FOOD FEST! Use code <b>CRAVE20</b> for 20% OFF</div>
+<h2>Find Your Favourite 🍴</h2>
+<p class="sub">Choose a category and discover your next delicious meal.</p>
+<div class="categories">
+<a href="#pizza">🍕 Pizza</a>
+<a href="#burger">🍔 Burgers</a>
+<a href="#biryani">🍛 Indian</a>
+<a href="#dessert">🍩 Desserts</a>
+</div>
+<h2 id="menu">✨ Today's Top Picks</h2>
+<div class="menu">
+<div class="card" id="pizza">
+<span class="tag">BEST SELLER</span>
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500" alt="Cheesy pizza">
+<div class="info">
+<h3>Golden Cheese Pizza</h3>
+<p>Extra cheese, herbs & crispy crust</p>
+<div class="bottom"><span class="price">₹199</span>
+<span class="rating">⭐ 4.9</span></div>
+<button class="btn" onclick="order('Golden Cheese Pizza',199)">Add to Order +</button>
+</div></div>
+<div class="card" id="burger">
+<span class="tag">HOT DEAL</span>
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Juicy burger">
+<div class="info">
+<h3>Monster Burger</h3>
+<p>Juicy patty with fresh vegetables</p>
+<div class="bottom"><span class="price">₹149</span>
+<span class="rating">⭐ 4.8</span></div>
+<button class="btn" onclick="order('Monster Burger',149)">Add to Order +</button>
+</div></div>
+<div class="card" id="biryani">
+<span class="tag">CHEF'S PICK</span>
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500" alt="Indian biryani">
+<div class="info">
+<h3>Royal Biryani</h3>
+<p>Fragrant rice with rich Indian spices</p>
+<div class="bottom"><span class="price">₹249</span>
+<span class="rating">⭐ 4.9</span></div>
+<button class="btn" onclick="order('Royal Biryani',249)">Add to Order +</button>
+</div></div>
+<div class="card" id="dessert">
+<span class="tag">SWEET TREAT</span>
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500" alt="Chocolate donuts">
+<div class="info">
+<h3>Choco Donuts</h3>
+<p>Soft, sweet and covered in chocolate</p>
+<div class="bottom"><span class="price">₹99</span>
+<span class="rating">⭐ 4.7</span></div>
+<button class="btn" onclick="order('Choco Donuts',99)">Add to Order +</button>
+</div></div>
+</div>
+<section class="reviews" id="reviews">
+<h2>💛 What Food Lovers Say</h2>
+<p>⭐⭐⭐⭐⭐ "Amazing food and beautiful presentation!"</p>
+<p>⭐⭐⭐⭐⭐ "My new favourite food destination."</p>
+</section>
+<footer>
+<h3>🔥 CRAVE CORNER</h3>
+<p>Made for food lovers, served with love.</p>
+<p>📍 Vijayawada | Contact: 98765 43210</p>
+<p>© 2026 Crave Corner</p>
+</footer>
+<script>
+function order(food,price){
+alert("🍽️ "+food+" added to your selection!\nPrice: ₹"+price+
+"\nThanks for choosing Crave Corner!");}
+</script>
+</body>
+</html>

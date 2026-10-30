@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NRI College | Knowledge for Tomorrow</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #26344a;
+    line-height: 1.6;
+}
+
+/* Navigation */
+header {
+    background: #102b50;
+    color: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #f9c74f;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #f9c74f;
+}
+
+/* Banner */
+.hero {
+    min-height: 400px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+      linear-gradient(90deg, rgba(8,29,58,.95),
+      rgba(8,29,58,.48)),
+      url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80")
+      center/cover;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #f9c74f;
+    color: #102b50;
+    padding: 12px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 8px 5px 0;
+}
+
+.btn:hover {
+    background: white;
+}
+
+/* Common sections */
+section {
+    padding: 55px 7%;
+    scroll-margin-top: 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #102b50;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.section-text {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    color: #637086;
+}
+
+/* Information cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(16,43,80,.08);
+    border-bottom: 4px solid #f9c74f;
+    transition: transform .25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: #174a7e;
+    margin-bottom: 10px;
+}
+
+.emoji {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* About */
+.about {
+    background: white;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.stat {
+    background: #eaf2fc;
+    padding: 22px;
+    border-radius: 10px;
+}
+
+.stat h3 {
+    font-size: 28px;
+    color: #174a7e;
+}
+
+/* Admissions */
+.admissions {
+    background: #eaf2fc;
+}
+
+.step {
+    border-left: 4px solid #f9c74f;
+    margin: 15px 0;
+    padding: 10px 18px;
+    background: white;
+    border-radius: 5px;
+}
+
+/* Events */
+.event-date {
+    display: inline-block;
+    background: #102b50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+/* Contact */
+.contact {
+    background: white;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    background: #f4f7fb;
+    padding: 28px;
+    border-radius: 12px;
+}
+
+.contact-box p {
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background: #102b50;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer a {
+    color: #f9c74f;
+    text-decoration: none;
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 65px 6%;
+        min-height: 350px;
+    }
+
+    section {
+        padding: 40px 6%;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="logo">🎓 NRI COLLEGE</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#departments">Departments</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Banner -->
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>Learn Today.<br>Lead Tomorrow.</h1>
+        <p>
+            Welcome to NRI College, where knowledge meets innovation.
+            Discover your talents, develop new skills, and prepare
+            for a successful future.
+        </p>
+        <a class="btn" href="#admissions">Explore Admissions</a>
+        <a class="btn" href="#departments">Explore Courses</a>
+    </div>
+</div>
+
+<!-- About College -->
+<section class="about" id="about">
+    <h2 class="section-title">About Our Institution</h2>
+    <p class="section-text">
+        NRI College is dedicated to academic excellence, practical
+        learning, innovation, and the overall development of students.
+        We encourage creativity, teamwork, and professional growth.
+    </p>
+
+    <div class="stats">
+        <div class="stat">
+            <h3>8+</h3>
+            <p>Academic Programs</p>
+        </div>
+        <div class="stat">
+            <h3>50+</h3>
+            <p>Faculty Members</p>
+        </div>
+        <div class="stat">
+            <h3>10+</h3>
+            <p>Campus Facilities</p>
+        </div>
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Learning Focus</p>
+        </div>
+    </div>
+    <p class="section-text" style="margin-top:15px;font-size:12px;">
+        Illustrative figures for this sample website. Replace with
+        verified institutional information.
+    </p>
+</section>
+
+<!-- Departments and Courses -->
+<section id="departments">
+    <h2 class="section-title">Departments & Courses</h2>
+    <p class="section-text">
+        Choose a field that matches your interests and career goals.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">💻</div>
+            <h3>Computer Science</h3>
+            <p>Programming, software development, web technologies,
+               databases, and computer networks.</p>
+            <p><strong>Courses:</strong> B.Tech CSE, related specializations</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🤖</div>
+            <h3>AI & Machine Learning</h3>
+            <p>Artificial intelligence, intelligent systems,
+               data analysis, and machine learning.</p>
+            <p><strong>Courses:</strong> AI/ML-related programs</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">⚡</div>
+            <h3>Electrical Engineering</h3>
+            <p>Electrical circuits, power systems, machines,
+               and modern electrical technologies.</p>
+            <p><strong>Courses:</strong> Electrical engineering programs</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🏗️</div>
+            <h3>Civil Engineering</h3>
+            <p>Construction, structural design, surveying,
+               and sustainable infrastructure.</p>
+            <p><strong>Courses:</strong> Civil engineering programs</p>
+        </div>
+    </div>
+</section>
+
+<!-- Faculty Profiles -->
+<section id="faculty" class="about">
+    <h2 class="section-title">Meet Our Faculty</h2>
+    <p class="section-text">
+        Experienced educators support students through teaching,
+        mentoring, practical sessions, and project guidance.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">👩‍🏫</div>
+            <h3>Dr. Faculty Member 1</h3>
+            <p><strong>Department:</strong> Computer Science</p>
+            <p>Specialization: Programming and Software Development</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">👨‍🏫</div>
+            <h3>Dr. Faculty Member 2</h3>
+            <p><strong>Department:</strong> AI & Machine Learning</p>
+            <p>Specialization: Artificial Intelligence and Data Science</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">👩‍🏫</div>
+            <h3>Faculty Member 3</h3>
+            <p><strong>Department:</strong> Engineering</p>
+            <p>Specialization: Technical Education and Project Guidance</p>
+        </div>
+    </div>
+    <p class="section-text" style="margin-top:20px;font-size:12px;">
+        Sample faculty profiles. Replace these entries with actual
+        faculty names, qualifications, and photographs.
+    </p>
+</section>
+
+<!-- Admissions -->
+<section class="admissions" id="admissions">
+    <h2 class="section-title">Admissions 2026–27</h2>
+    <p class="section-text">
+        Begin your educational journey by following these general steps.
+        Check the college's official admission rules for exact requirements.
+    </p>
+
+    <div class="step">
+        <h3>01. Choose Your Course</h3>
+        <p>Explore available programs and eligibility requirements.</p>
+    </div>
+
+    <div class="step">
+        <h3>02. Prepare Your Documents</h3>
+        <p>Collect academic certificates, identification, and
+           other required documents.</p>
+    </div>
+
+    <div class="step">
+        <h3>03. Submit Your Application</h3>
+        <p>Complete the official application and provide the
+           requested information.</p>
+    </div>
+
+    <div class="step">
+        <h3>04. Complete Admission</h3>
+        <p>Follow the official selection, verification, and fee-payment
+           instructions.</p>
+    </div>
+
+    <a href="#contact" class="btn">Contact Admissions</a>
+</section>
+
+<!-- Campus Facilities -->
+<section id="facilities">
+    <h2 class="section-title">Campus Facilities</h2>
+    <p class="section-text">
+        A learning environment designed to support academics,
+        creativity, recreation, and student development.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">📚</div>
+            <h3>Digital Library</h3>
+            <p>Study materials, reference books, and digital resources.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🖥️</div>
+            <h3>Computer Labs</h3>
+            <p>Practical programming, computing, and technology learning.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🏀</div>
+            <h3>Sports & Recreation</h3>
+            <p>Activities that encourage fitness, teamwork, and discipline.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🚌</div>
+            <h3>Transport</h3>
+            <p>Campus transport information and commuting support.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🏠</div>
+            <h3>Hostel</h3>
+            <p>Student accommodation information and residential support.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔬</div>
+            <h3>Innovation Labs</h3>
+            <p>Hands-on projects, experimentation, and creative learning.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Events -->
+<section class="about" id="events">
+    <h2 class="section-title">Campus Events</h2>
+    <p class="section-text">
+        Participate in activities that build confidence,
+        creativity, and technical skills.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <span class="event-date">Technical</span>
+            <h3>Tech Fest</h3>
+            <p>Explore coding competitions, robotics, and student projects.</p>
+        </div>
+
+        <div class="card">
+            <span class="event-date">Innovation</span>
+            <h3>AI Got Talent</h3>
+            <p>Showcase creativity through AI art, poetry, music,
+               and innovative concepts.</p>
+        </div>
+
+        <div class="card">
+            <span class="event-date">Student Life</span>
+            <h3>Cultural Day</h3>
+            <p>Celebrate student talent through cultural performances
+               and creative activities.</p>
+        </div>
+    </div>
+    <p class="section-text" style="margin-top:15px;font-size:12px;">
+        Sample events. Add confirmed dates and registration information
+        when available.
+    </p>
+</section>
+
+<!-- Contact Details -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-text">
+        Have questions about courses or admissions?
+        Contact the college office for verified information.
+    </p>
+
+    <div class="contact-box">
+        <p>📍 <strong>Address:</strong> Add the official college address</p>
+        <p>📞 <strong>Phone:</strong> Add the college contact number</p>
+        <p>✉️ <strong>Email:</strong> Add the official college email</p>
+        <p>🌐 <strong>Website:</strong> Add the official college website</p>
+        <p>🕒 <strong>Office Hours:</strong> Add official working hours</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h3>NRI COLLEGE</h3>
+    <p>Empowering Students Through Education and Innovation</p>
+    <p>
+        <a href="#home">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#admissions">Admissions</a> |
+        <a href="#contact">Contact</a>
+    </p>
+    <p>&copy; 2026 NRI College. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
